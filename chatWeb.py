@@ -41,13 +41,13 @@ with col3:
 with col4:
      file = st.file_uploader("Pick a File", accept_multiple_files = True)
 
+temperature = st.slider("Creativity", 0,10,5)
 
 if st.button("Process"):
         with st.spinner():
             web(url)
-            pdfData = read_pdf(file)
+            read_pdf(file)
             chat_connection()
-            temperature = st.slider("Creativity", 0,10,5)
 
 query = st.text_area(label="Your Query")
 try:
