@@ -10,43 +10,17 @@ with col1:
     name = st.text_area(label="Your Name")
 
 with col2:
-    language = st.selectbox("Language",(
-    "English",
-    "Spanish",
-    "French",
-    "German",
-    "Chinese",
-    "Japanese",
-    "Arabic",
-    "Russian",
-    "Portuguese",
-    "Italian",
-    "Dutch",
-    "Hindi",
-    "Swedish",
-    "Korean",
-    "Turkish",
-    "Greek",
-    "Hebrew",
-    "Thai",
-    "Vietnamese",
-    "Polish",
-))
+    key = st.text_area(label="Enter Your Key")
 
-key = st.text_area(label="Enter Your Key")
+url = st.text_area(label="Enter URL.....")
 
-with col3:
-    url = st.text_area(label="Enter URL.....")
-
-with col4:
-     file = st.file_uploader("Pick a File", accept_multiple_files = True)
 
 temperature = st.slider("Creativity", 0,10,5)
 
 if st.button("Process"):
         with st.spinner():
+            openaiKey(key)
             web(url)
-            read_pdf(file)
             chat_connection()
 
 query = st.text_area(label="Your Query")

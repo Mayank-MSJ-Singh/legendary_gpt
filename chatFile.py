@@ -1,6 +1,7 @@
 from langchain import OpenAI
 import os
-os.environ["OPENAI_API_KEY"] = "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"
+def openaiKey(key):
+    os.environ["OPENAI_API_KEY"] = key
 from langchain.chains import RetrievalQAWithSourcesChain
 from langchain.document_loaders import UnstructuredURLLoader
 from langchain.text_splitter import CharacterTextSplitter
